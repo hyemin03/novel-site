@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title class>SHM</title>
+        <link rel="stylesheet" href="Contents/css/FINALTEST.css">
+        <link rel="stylesheet" href="Contents/css/FINALTEST2.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+    </head>
+    <body>
+        <a href="#contents" class =" skip"> 본문바로가기</a>
+        <header>
+            <h1><a href="#a" id="app">SHM</a></h1>
+            <h2 class="hide">대메뉴</h2>
+            <nav class="inb">
+                <ul>                        
+                   <li><a href="#a">추천소설</a></li>                                        
+                   <li><a href="#a">소설소개</a></li>
+                   <li><a href="" onclick="alert('아직 미출시되었습니다.')">소설1</a></li>
+                   <li><a href="" onclick="alert('아직 미출시되었습니다.')">소설2</a></li>
+                   <li><a href="" onclick="alert('아직 미출시되었습니다.')">소설3</a></li>
+                </ul>
+            </nav>
+            <h2 class="hide">관련서비스</h2>
+            <nav class="spot">
+                <ul>
+                    <li><a href="#a">찾기</a></li>
+                    <li><a href="#a">SITEMAP</a></li>
+                    <li><a href="#a">BLOG</a></li>
+                </ul>
+            </nav>
+        </header>   
+        <section class='visual'>
+            <h2 class="hide">보여주기</h2> <!--지체장애인분들을 위한 ---> 
+            <button href="#a" class="prev" onclick="plusDivs(-1)"> 이전</button>
+            <button href="#a" class="next" onclick="plusDivs(1)">다음</button>
+            <div class="control">
+            <ul id="slideBottom">
+                <li class="on"><a href="#a">첫번째 소설</a>
+                </li>
+                <li><a href="#a">두번째 소설</a>
+                </li>
+                <li><a href="#a">세번째 소설</a>
+                </li>
+                <li><a href="#a">네번째 소설</a>
+                </li>
+                <li><a href="#a">다섯번째 소설</a>
+                </li>
+                </ul>
+            </div>
+        </div> 
+            <div class="con">
+                <div>
+                    <img class="mySlides" src="Contents/img/Levelup.jpg" style="width: 30%; margin-left: auto; margin-right: auto;">
+                    <img class="mySlides" src="Contents/img/hasa.jpg" style="width: 28%; margin-left: auto; margin-right: auto;">
+                    <img class="mySlides" src="Contents/img/hwasan.jpg" style="width: 30%; margin-left: auto; margin-right: auto;">
+                    <img class="mySlides" src="Contents/img/sword.jpg" style="width: 30%; margin-left: auto; margin-right: auto;">
+                    <img class="mySlides" src="Contents/img/tem.jpg" style="width: 30%; margin-left: auto; margin-right: auto;">
+                </div>
+            </div>
+        </section> 
+
+    </body>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://www.cssscript.com/demo/simple-typewriter-effect-pure-javascript-typewriterjs/typewriter.js"></script>
+ 
+    <script type="text/javascript">
+        var app = document.getElementById('app');
+ 
+        var typewriter = new Typewriter(app, {
+            loop: true
+        });
+  
+        typewriter.typeString('SHM!')
+            .pauseFor(2500)
+            .deleteAll()
+            .start();
+    </script>
+   
+   <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+        
+        function plusDivs(n) {
+          showDivs(slideIndex += n);
+        }
+        
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            if (n > x.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = x.length}
+            for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+            }
+            x[slideIndex-1].style.display = "block";  
+            
+            slideBottomes = document.getElementById("slideBottom").children
+            
+            for (var i=0; i<slideBottomes.length; i++) {
+                slideBottomes[i].classList.remove("on")
+            }
+
+            slideBottomes[slideIndex-1].classList.add("on");
+        }
+    </script>
+</html>
